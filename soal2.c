@@ -1,50 +1,48 @@
 // Tugas-02 Soal-2
 // Khadafi Sinaga - 2211600644
-#include "iostream"
-#include "conio.h"
+
+#include <iostream>
+
 using namespace std;
 
-struct {
-	int jam, menit, detik;
-}
-berangkat, tiba, perjalanan;
-int main() {
+int main()
+{
+		cout << "\n~ Name : Khadafi Sianga ~\n";
+		cout << "\n~ NIM : 2211600644 ~\n"
+			<< "\n\t\tSoal-2 Menginput 3 buah bilangan yang masing-masing menyatakan panjang garis sisi sebuah segitiga\n";
+    int bil1, bil2, bil3;
+    char coba;
+	do {
+    cout <<"Masukan bilangan pertama : ";
+    cin >> bil1;
 
-	berangkat.jam = 8;
-	berangkat.menit = 52;
-	berangkat.detik = 45;
-	cout <<endl <<"Berangkat pukul = " <<berangkat.jam <<":" <<berangkat.menit <<":" <<berangkat.detik <<endl;
+    cout <<"Masukan bilangan kedua : ";
+    cin >> bil2;
 
-	tiba.jam = 23;
-	tiba.menit = 15;
-	tiba.detik = 10;
-	cout <<endl <<"Tiba ditujuan pukul = " <<tiba.jam <<":" <<tiba.menit <<":" <<tiba.detik <<endl;
+    cout <<"Masukan bilangan ketiga : ";
+    cin >> bil3;
 
-	if ((tiba.detik - berangkat.detik) < 0)
-	{
-		perjalanan.detik = (60 + tiba.detik) - berangkat.detik;
-		tiba.menit--;
-	}
-	else {
-		perjalanan.detik = tiba.detik - berangkat.detik;
-	}
-	if ((tiba.menit - berangkat.menit) < 0)
-	{
-		perjalanan.menit = (60 + tiba.menit) - berangkat.menit;
-		tiba.jam--;
-	}
-	else {
-		perjalanan.menit = tiba.menit - berangkat.menit;
-	}
-	if ((tiba.jam - berangkat.jam) < 0)
-	{
-		perjalanan.jam = (24 + tiba.jam) - berangkat.jam;
-		tiba.jam--;
-	}
-	else {
-		perjalanan.jam = tiba.jam - berangkat.jam;
-	}
+    if(bil1==bil2 && bil1==bil3 && bil3==bil2)
+    {
+        cout<<"SAMA SISI"<<endl;
+    }
+    else if(bil1==bil2 || bil1==bil3 || bil3==bil2)
+    {
+        if(bil1!=bil2 || bil1!=bil3 || bil3!=bil2)
+        {
+            cout<<"SAMA KAKI"<<endl;
+        }
+    }
+    else
+    cout<<"SEMBARANG"<<endl;
 
-	cout <<endl <<"Waktu yang di habiskan dalam perjalanan " <<perjalanan.jam <<" Jam, " <<perjalanan.menit <<" Menit, dan " <<perjalanan.detik <<" Detik" <<endl;
-	getch();
+    cout << "\nCoba lagi (Y/T) ? ";
+    cin >> coba;
+	
+				
+	}
+	while (coba == 'y' || coba == 'Y');
+
+	cout << "Keluar." << endl;
+	return 0;
 }
